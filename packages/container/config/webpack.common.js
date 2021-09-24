@@ -1,3 +1,5 @@
+const HtmlWebackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   module: {
     rules: [
@@ -14,4 +16,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebackPlugin({
+      template: "./public/index.html",
+    }),
+  ],
 };

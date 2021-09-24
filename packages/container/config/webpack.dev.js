@@ -1,5 +1,4 @@
 const { merge } = require("webpack-merge");
-const HtmlWebackPlugin = require("html-webpack-plugin");
 const ModuleFederarionPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
@@ -13,9 +12,6 @@ const devConfig = {
     },
   },
   plugins: [
-    new HtmlWebackPlugin({
-      template: "./public/index.html",
-    }),
     new ModuleFederarionPlugin({
       name: "container",
       remotes: {
